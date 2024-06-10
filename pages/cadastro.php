@@ -1,34 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Cadastro</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/logodragao.png">
-            </div>
-
-            <div class="nomesite">
-                <h1>Forja do dragão</h1>
-            </div>
-            
-            <div class="botaologin">
-                <a href="index.html">HOME</a>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <div class="itens"></div>
-    </main>
-
-    <footer>
-        
-    </footer>
-</body>
-</html>
+<div class="itens">
+    <form action="?page=games-action" method="POST">
+        <input type="hidden" name="acao" value="cadastrar" />
+        <label for="nome">Nome do Game:</label>
+        <input type="text" name="nome" />
+        <label for="genero">Gênero</label>
+        <input type="text" name="genero" />
+        <label for="plataforma">Plataforma</label>
+        <input type="text" name="plataforma" />
+        <label for="preco">Preço</label>
+        <input type="number" name="preco" />
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>

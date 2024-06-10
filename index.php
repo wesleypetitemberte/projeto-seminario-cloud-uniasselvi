@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./pages/css/style.css">
-    <title>Página principal</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Forja do dragão</title>
 </head>
+
 <body>
 
     <header>
         <nav>
             <div class="logo">
-                <img src="./pages/assets/logodragao.png">
+                <img src="./assets/logodragao.png">
             </div>
 
             <div class="nomesite">
-                <h1>Forja do dragão</h1>
+                <h3>Forja do dragão - Locadora de Games</h3>
             </div>
-            
-            <div class="botaologin">
-                <a href="./pages/cadastro.php">LOGIN</a>
+
+            <div class="botao-menu">
+                <a href="?">Home</a>
+            </div>
+            <div class="botao-menu">
+                <a href="?page=novo">Cadastro</a>
             </div>
         </nav>
     </header>
@@ -27,27 +32,43 @@
     <main>
         <div class="itens">
             <div class="container">
-                <div class="card" style="--clr:#0fff;"></div>
-                <div class="card" style="--clr:#ff0;"></div>
-                <div class="card" style="--clr:#ffa500;"></div>
+                <?php
+                /** Arquivo de configuração do banco de dados */
+                include("./php/config.php");
+                switch (@$_REQUEST["page"]) {
+                    /**
+                     * Todas as páginas devem ser criadas dentro da pasta pages
+                     * e deve ser feito o include aqui criando um novo case
+                     */
+                    case "novo":
+                        include("./pages/cadastro.php");
+                        break;
+                    case "games-action":
+                        include("./php/actions/games-action.php");
+                        break;
+                    default:
+                        include("./pages/listar.php");
+                        break;
+                }
+                ?>
             </div>
-            <script>
-                let cards = document.querySelectorAll('.card');
-                cards.forEach(card => {
-                card.onmousemove = function(e){
-                let x = e.pageX - card.offsetLeft;
-                let y = e.pageY - card.offsetTop;
-
-                card.style.setProperty('--x', x +'px');
-                card.style.setProperty('--y', y +'px');
-                }})
-            </script>
         </div>
     </main>
 
     <footer>
-        
+
     </footer>
-    
+    <script>
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+        card.onmousemove = function(e){
+        let x = e.pageX - card.offsetLeft;
+        let y = e.pageY - card.offsetTop;
+
+        card.style.setProperty('--x', x +'px');
+        card.style.setProperty('--y', y +'px');
+        }})
+    </script>
 </body>
+
 </html>
