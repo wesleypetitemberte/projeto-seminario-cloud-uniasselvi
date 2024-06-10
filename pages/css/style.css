@@ -1,0 +1,137 @@
+*{
+    margin: 0 auto;
+    width: 100%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(120deg, #2b2a30, rgba(70, 50, 158, 0.233));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header{
+    padding-top: 80px;
+    padding-bottom: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 1000px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(-120deg, #f0d525d8, #a80505da);
+    border-radius: 20px;
+    box-shadow: -15px -17px 17px rgba(10,10,10,0.25);
+    height: 100px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: -30px;
+    margin-left: -10px;
+}
+
+.nomesite{
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.botaologin{
+    width: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+a:link, a:visited{
+    padding: 20px;
+    background: transparent;
+    text-decoration: none;
+    border: 2px solid #a80505da;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    color: #a80505da;
+    font-weight: bold;
+}
+
+a:hover, a:active{
+    background-color: #a80505da;
+    color: #f0d525d8;
+}
+
+main{
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 1000px;
+}
+
+.itens{
+    background: transparent;
+    box-shadow:-15px -17px 17px rgba(10,10,10,0.25);
+    border: 2px solid #ffffff;
+    min-height: 600px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container{
+    display: flex;
+    justify-content:space-around;
+    align-items:first baseline;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+}
+
+.container .card{
+    position: relative;
+    width: 280px;
+    height: 360px;
+    background: rgba(45, 45, 45, 1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(var(--clr),transparent,transparent);
+    width: 600px;
+    height: 600px;
+    opacity: 0;
+}
+
+.container .card:hover::before{
+    opacity: 1;
+}
+
+.container .card::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: rgba(45, 45, 45, 0.75);
+    border-radius: 20px;
+}
+
