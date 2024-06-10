@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="./pages/css/style.css">
     <title>Página principal</title>
 </head>
 <body>
 
     <header>
         <nav>
-
             <div class="logo">
-                <img src="assets/logodragao.png">
+                <img src="./pages/assets/logodragao.png">
             </div>
 
             <div class="nomesite">
@@ -20,11 +19,9 @@
             </div>
             
             <div class="botaologin">
-                <a href="cadastro.html">LOGIN</a>
+                <a href="./pages/cadastro.php">LOGIN</a>
             </div>
-            
         </nav>
-        
     </header>
 
     <main>

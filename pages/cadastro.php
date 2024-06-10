@@ -7,10 +7,8 @@
     <title>Cadastro</title>
 </head>
 <body>
-
     <header>
         <nav>
-
             <div class="logo">
                 <img src="assets/logodragao.png">
             </div>
@@ -22,9 +20,7 @@
             <div class="botaologin">
                 <a href="index.html">HOME</a>
             </div>
-            
         </nav>
-        
     </header>
 
     <main>
@@ -34,6 +30,5 @@
     <footer>
         
     </footer>
-    
 </body>
 </html>
