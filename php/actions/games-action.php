@@ -7,9 +7,10 @@
       $nome = $_POST["nome"];
       $genero = $_POST["genero"];
       $plataforma = $_POST["plataforma"];
+      $imagem = $_POST["imagem"];
       $preco = $_POST["preco"];
 
-      $sql = "INSERT INTO games (nome, genero, plataforma, preco) VALUES ('{$nome}', '{$genero}', '{$plataforma}', {$preco})";
+      $sql = "INSERT INTO games (nome, genero, plataforma, imagem, preco) VALUES ('{$nome}', '{$genero}', '{$imagem}', '{$plataforma}', {$preco})";
 
       $resposta = $conn->query($sql);
 

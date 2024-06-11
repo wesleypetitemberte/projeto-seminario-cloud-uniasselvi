@@ -7,6 +7,8 @@
         <input type="text" name="genero" />
         <label for="plataforma">Plataforma</label>
         <input type="text" name="plataforma" />
+        <label for="plataforma">Imagem</label>
+        <input type="text" name="imagem" />
         <label for="preco">Preço</label>
         <input type="number" name="preco" />
         <button type="submit">Cadastrar</button>
