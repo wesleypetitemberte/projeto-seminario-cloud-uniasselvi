@@ -17,15 +17,18 @@
             </div>
 
             <div class="nomesite">
-                <h3>Forja do dragão - Locadora de Games</h3>
+                <h3>Forja do Dragão Locadora de Games</h3>
             </div>
 
-            <div class="botao-menu">
-                <a href="?">Home</a>
-            </div>
-            <div class="botao-menu">
-                <a href="?page=novo">Cadastro</a>
-            </div>
+            <ul class="main-menu">
+                <li>
+                    <a class="botao-menu" href="?">Home</a>
+                </li>
+
+                <li>
+                    <a class="botao-menu" href="?page=novo">Cadastro</a>
+                </li>
+            </ul>
         </nav>
     </header>
 
