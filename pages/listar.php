@@ -14,6 +14,7 @@
             <p>Gênero: $linha->genero</p>
             <p>Plataforma: $linha->plataforma</p>
             <p>Preco: $linha->preco</p>
+            <button>Alugar</button>
           </div>
           HTML;
       }
