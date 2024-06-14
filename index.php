@@ -28,6 +28,12 @@
                 <li>
                     <a class="botao-menu" href="?page=novo">Cadastro</a>
                 </li>
+                <li>
+                    <a class="botao-menu" href="?page=novo-usuario">+ Usuário</a>
+                </li>
+                <li>
+                    <a class="botao-menu" href="./logout.php">Sair</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -37,17 +43,28 @@
             <div class="container">
                 <?php
                 /** Arquivo de configuração do banco de dados */
+                session_start();
                 include("./php/config.php");
+
+                if (empty($_SESSION)) {
+                    header("Location: login.php");
+                }
                 switch (@$_REQUEST["page"]) {
-                    /**
+                        /**
                      * Todas as páginas devem ser criadas dentro da pasta pages
                      * e deve ser feito o include aqui criando um novo case
                      */
                     case "novo":
                         include("./pages/cadastro.php");
                         break;
+                    case "novo-usuario":
+                        include("./pages/cadastro-usuario.php");
+                        break;
                     case "games-action":
                         include("./php/actions/games-action.php");
+                        break;
+                    case "usuario-action":
+                        include("./php/actions/usuario-action.php");
                         break;
                     default:
                         include("./pages/listar.php");
@@ -64,13 +81,14 @@
     <script>
         let cards = document.querySelectorAll('.card');
         cards.forEach(card => {
-        card.onmousemove = function(e){
-        let x = e.pageX - card.offsetLeft;
-        let y = e.pageY - card.offsetTop;
+            card.onmousemove = function(e) {
+                let x = e.pageX - card.offsetLeft;
+                let y = e.pageY - card.offsetTop;
 
-        card.style.setProperty('--x', x +'px');
-        card.style.setProperty('--y', y +'px');
-        }})
+                card.style.setProperty('--x', x + 'px');
+                card.style.setProperty('--y', y + 'px');
+            }
+        })
     </script>
 </body>
 

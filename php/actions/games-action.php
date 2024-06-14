@@ -26,6 +26,8 @@
       break;
     case "excluir":
       break;
+    case "alugar":
+      break;
     default:
       break;
   }
