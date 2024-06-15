@@ -32,6 +32,9 @@
                     <a class="botao-menu" href="?page=novo-usuario">+ Usuário</a>
                 </li>
                 <li>
+                    <a class="botao-menu" href="?page=meus-games">Minhas compras</a>
+                </li>
+                <li>
                     <a class="botao-menu" href="./logout.php">Sair</a>
                 </li>
             </ul>
@@ -59,6 +62,9 @@
                         break;
                     case "novo-usuario":
                         include("./pages/cadastro-usuario.php");
+                        break;
+                    case "meus-games":
+                        include("./pages/meus-games.php");
                         break;
                     case "games-action":
                         include("./php/actions/games-action.php");
