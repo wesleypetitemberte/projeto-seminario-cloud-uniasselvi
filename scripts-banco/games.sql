@@ -26,6 +26,8 @@ create table usuario (
   senha varchar(2000) not null
 );
 
+alter table usuario add column tipo varchar(80) default 'CLIENTE';
+
 create table aluguel_game (
   id int primary key auto_increment,
   usuario_id int not null,

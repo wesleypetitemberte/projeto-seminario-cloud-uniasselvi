@@ -9,7 +9,16 @@
 </head>
 
 <body>
+    <?php
+    /** Arquivo de configuração do banco de dados */
+    session_start();
+    /** Arquivo de configuração do banco de dados */
+    include("./php/config.php");
 
+    if (empty($_SESSION)) {
+        header("Location: login.php");
+    }
+    ?>
     <header>
         <nav>
             <div class="logo">
@@ -24,16 +33,18 @@
                 <li>
                     <a class="botao-menu" href="?">Home</a>
                 </li>
-
-                <li>
-                    <a class="botao-menu" href="?page=novo">Cadastro</a>
-                </li>
-                <li>
-                    <a class="botao-menu" href="?page=novo-usuario">+ Usuário</a>
-                </li>
-                <li>
-                    <a class="botao-menu" href="?page=meus-games">Minhas compras</a>
-                </li>
+                <?php if ($_SESSION["tipo_usuario"] == 'ADMIN') : ?>
+                    <li>
+                        <a class="botao-menu" href="?page=novo">Cadastro Game</a>
+                    </li>
+                    <li>
+                        <a class="botao-menu" href="?page=novo-usuario">Novo Cliente</a>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a class="botao-menu" href="?page=meus-games">Minhas compras</a>
+                    </li>
+                <?php endif; ?>
                 <li>
                     <a class="botao-menu" href="./logout.php">Sair</a>
                 </li>
@@ -45,13 +56,6 @@
         <div class="itens">
             <div class="container">
                 <?php
-                /** Arquivo de configuração do banco de dados */
-                session_start();
-                include("./php/config.php");
-
-                if (empty($_SESSION)) {
-                    header("Location: login.php");
-                }
                 switch (@$_REQUEST["page"]) {
                         /**
                      * Todas as páginas devem ser criadas dentro da pasta pages

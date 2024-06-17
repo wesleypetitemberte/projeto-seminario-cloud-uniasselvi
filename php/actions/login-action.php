@@ -21,8 +21,9 @@ if ($qtd > 0 and password_verify($senha, $row->senha)) {
   $_SESSION["email"] = $row->email;
   $_SESSION["nome"] = $row->nome;
   $_SESSION["id_usuario"] = $row->id;
+  $_SESSION["tipo_usuario"] = $row->tipo;
   print "<script>location.href='../../index.php'</script>";
 } else {
   print "<script>alert('Usuário e/ou senha incorretos!')</script>";
-  print "<script>location.href='login.php'</script>";
+  print "<script>location.href='../../login.php'</script>";
 }
