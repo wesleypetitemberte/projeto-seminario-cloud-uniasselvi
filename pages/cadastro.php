@@ -1,7 +1,7 @@
 <div class="itens">
     <section class="page-cadastro">
         <h1>CADASTRO</h1>
-        <form action="?page=games-action" method="POST" id="formCadastro">
+        <form action="./?page=games-action" method="POST" id="formCadastro">
             <input type="hidden" name="acao" value="cadastrar"/>
 
             <label for="nome">Nome do Game</label>
