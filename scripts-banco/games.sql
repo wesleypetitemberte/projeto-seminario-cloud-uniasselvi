@@ -16,7 +16,7 @@ insert into games (nome, genero, plataforma, preco, imagem) values ('Mario Bros'
 select * from games;
 
 --executar essas próximas linhas no banco locadora-games
-alter table games add column qtd_disponivel int default 0;
+alter table games add column qtd_disponivel int default 1;
 
 create table usuario (
   id int primary key auto_increment,
