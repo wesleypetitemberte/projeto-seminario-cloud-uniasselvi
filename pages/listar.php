@@ -1,9 +1,9 @@
 <section class="lista">
   <?php
-  $sql = "SELECT * FROM games WHERE qtd_disponivel > 0";
+  $sql = "SELECT * FROM games WHERE qtd_disponivel >= 0";
   $resposta = $conn->query($sql);
 
-  if ($resposta && $resposta->num_rows > 0) {
+  if ($resposta && $resposta->num_rows >= 0) {
     while ($linha = $resposta->fetch_object()) {
       echo "<div>";
       echo <<<HTML
@@ -20,7 +20,7 @@
       echo "</div>";
     }
   } else {
-    echo "<p>Nenhum jogo encontrado!</p>";
+    echo "<p>Nenhum dado encontrado!</p>";
   }
   ?>
 </section>
