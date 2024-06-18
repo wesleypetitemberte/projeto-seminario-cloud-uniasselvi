@@ -7,7 +7,7 @@
     while ($linha = $resposta->fetch_object()) {
       echo "<div>";
       echo <<<HTML
-            <div class='card' style='--clr:#0fff;'> 
+            <div class='card' style='--clr:#ff0;'> 
               <img width="240px" src='$linha->imagem' alt="imagem game" />
               <h3>$linha->nome</h3>
               <p>Gênero: $linha->genero</p>
@@ -16,7 +16,7 @@
               <p>Qtd. Disponível: $linha->qtd_disponivel</p>
             </div>
             HTML;
-      echo "<button onclick=\"location.href='?page=games-action&acao=alugar&id=" . $linha->id . "'\">Alugar</button>";
+      echo "<button class='botaoalugar' onclick=\"location.href='?page=games-action&acao=alugar&id=" . $linha->id . "'\"><strong>ALUGAR</strong></button>";
       echo "</div>";
     }
   } else {
