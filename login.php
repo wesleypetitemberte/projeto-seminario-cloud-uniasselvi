@@ -5,21 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <title>Acesso</title>
+    <title>Login</title>
 </head>
 
 <body>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="./assets/logodragao.png">
-            </div>
-            <div class="nomesite">
-                <h3>Forja do Dragão Locadora de Games</h3>
-            </div>
-        </nav>
-    </header>
+    <?php include("./php/components/header.php"); ?>
 
     <main>
         <div class="itens">
@@ -37,6 +27,8 @@
         </div>
         </div>
     </main>
+
+    <?php include("./php/components/footer.php"); ?>
 </body>
 
 </html>
