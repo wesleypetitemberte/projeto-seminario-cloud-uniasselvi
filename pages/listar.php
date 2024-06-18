@@ -20,7 +20,7 @@
       echo "</div>";
     }
   } else {
-    echo "<p>Nenhum dado encontrado!</p>";
+    echo "<p>Nenhum game encontrado!</p>";
   }
   ?>
 </section>
