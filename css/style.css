@@ -26,10 +26,10 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(-120deg, #f0d525d8, #a80505da);
+    background: linear-gradient(-120deg, #fafaf7d8, #a80505da);
     border-radius: 20px;
     box-shadow: -15px -17px 17px rgba(10,10,10,0.25);
-    height: 100px;
+    height: 200px;
     padding-left: 16px;
     padding-right: 16px;
     text-align: center;
