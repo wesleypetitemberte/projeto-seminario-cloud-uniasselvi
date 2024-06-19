@@ -10,9 +10,9 @@
       <div class='card' style='--clr:#0fff;'>
         <img width="240px" src='<?php echo $linha->imagem; ?>' alt="<?php echo $linha->nome; ?>">
         <h3><?php echo $linha->nome; ?></h3>
-        <p>Gênero: <?php echo $linha->genero; ?></p>
-        <p>Plataforma: <?php echo $linha->plataforma; ?></p>
-        <p>Preço: <?php echo $linha->preco; ?></p>
+        <p class='card-item'>Gênero: <?php echo $linha->genero; ?></p>
+        <p class='card-item'>Plataforma: <?php echo $linha->plataforma; ?></p>
+        <p class='card-item'>Preço: <?php echo $linha->preco; ?></p>
         <button class="botaoalugar" onclick="<?php echo $link; ?>"><strong>DEVOLVER</strong></button>
       </div>
     <?php }; ?>
