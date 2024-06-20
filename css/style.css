@@ -6,7 +6,7 @@
 }
 
 body{
-    background: linear-gradient(45deg, #000000, #27201f);
+    background: linear-gradient(45deg, #000000 30%, #3d0d04);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -25,7 +25,6 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
     background: linear-gradient(-360deg, #eeee0bd8, #a80505da 110%);
-    box-shadow: -15px -17px 17px rgba(10,10,10,0.25);
     min-height: 200px;
     padding-left: 16px;
     padding-right: 16px;
@@ -96,14 +95,23 @@ main{
 }
 
 .itens{
-    background: transparent;
-    box-shadow:-15px -17px 17px rgba(10,10,10,0.25);
-    border: 2px solid #ffffff;
+    background-image: url(../assets/magmawall2.jpg);
+    background-repeat: no-repeat;
+    box-shadow: inset 0px -90px 80px 30px rgb(8, 8, 8);
     min-height: 600px;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
 }
+
+:root{
+    --clr-1: #242424;
+    --clr-2: #eeff00;
+    --clr-3: #ff9100;
+    --clr-4: #ff0000;
+}
+
+
 
 .listabotoes .button{
   background-color: #0000003f;
@@ -111,7 +119,6 @@ main{
   color: #f0d525d8;
   padding: 15px 10px;
   text-align: center;
-  text-decoration: none;
   font-size: 16px;
   cursor: pointer;
   width: 110px;

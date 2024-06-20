@@ -13,10 +13,11 @@
     <?php include("./php/components/header.php"); ?>
 
         <main>
+            
             <div class="itens">
-                <div class="container">
-                    <?php
-                    switch (@$_REQUEST["page"]) {
+                    <div class="container">
+                        <?php
+                        switch (@$_REQUEST["page"]) {
                             /**
                          * Todas as páginas devem ser criadas dentro da pasta pages
                          * e deve ser feito o include aqui criando um novo case
@@ -39,15 +40,15 @@
                         default:
                             include("./pages/listar.php");
                             break;
-                    }
-                    ?>
-                    <div class="listabotoes">
-                        <button class="button">Adicionar</button>
-                        <button class="button">Excluir</button>
-                        <button class="button">Editar</button>
-                    </div>
+                        }
+                        ?>
+                        <div class="listabotoes">
+                            <button class="button">Adicionar</button>
+                            <button class="button">Excluir</button>
+                            <button class="button">Editar</button>
+                        </div>
                 </div>
-            </div>
+            </div>            
             
         </main>
 
