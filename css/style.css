@@ -183,6 +183,7 @@ main{
     inset: 2px;
     background: rgba(45,45,45,0.75);
     border-radius: 20px;
+    
 }
 
 .page-cadastro {
@@ -268,7 +269,7 @@ img, h3, p, button{
 }
 
 .botaoalugar{
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     cursor: pointer;
     text-align: center;
@@ -279,7 +280,7 @@ img, h3, p, button{
 }
 
 button:hover, button:active{
-    background-color: rgba(45, 45, 45, 1);
+    background-color: #2d2d2d;
     color: gold;
     border: 2px solid gold;
     transition: 0.5s;
@@ -290,9 +291,16 @@ img{
 }
 
 .card img{
-    height: auto;
+    height: 150px;
     margin-bottom: 20px;
     width: 100%;
     object-fit: cover;
 }
+
+.card p {
+    color: gold;
+
+}
+
+
 
