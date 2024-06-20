@@ -41,8 +41,14 @@
                             break;
                     }
                     ?>
+                    <div class="listabotoes">
+                        <button class="button">Adicionar</button>
+                        <button class="button">Excluir</button>
+                        <button class="button">Editar</button>
+                    </div>
                 </div>
             </div>
+            
         </main>
 
         <?php include("./php/components/footer.php"); ?>

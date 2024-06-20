@@ -16,6 +16,7 @@
         <p>Qtd. Disponível: <?php echo $linha->qtd_disponivel; ?></p>
         <button class="botaoalugar" onclick="<?php echo $link; ?>"><strong>ALUGAR</strong></button>
       </div>
+
     <?php }; ?>
   <?php else : ?> 
     <p>Nenhum game encontrado!</p>
