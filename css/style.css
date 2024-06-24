@@ -121,10 +121,8 @@ main{
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-  width: 110px;
   display: inline-block;
   transition: 0.3s;
-  margin: 5px;
   border-radius: 8px;
   font-weight: bold;
 }
@@ -133,7 +131,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 320px;
+    margin-top: 1em;
+    gap: 10px;
+    width: 100%;
 }
 
 .listabotoes .button:hover{

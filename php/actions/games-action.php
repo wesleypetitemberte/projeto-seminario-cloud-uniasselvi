@@ -3,6 +3,32 @@
 /**
  * Página para controlar as ações do CRUD dos games
  */
+
+function validarUsuario($tipo_usuario, $id_usuario = $_SESSION["id_usuario"])
+{
+  if (empty($_SESSION)) {
+    echo "<script>alert('Você precisa estar logado para alugar um game!')</script>";
+    echo "<script>location.href = '?page=login'</script>";
+    exit;
+  }
+
+
+  if (empty($id_usuario) || $_SESSION["tipo_usuario"] != $tipo_usuario) {
+    echo "<script>alert('Você não tem permissão para executar essa ação!')</script>";
+    echo "<script>location.href = '?page=meus-games'</script>";
+    exit;
+  }
+}
+
+function validarId($id)
+{
+  if (empty($id)) {
+    echo "<script>alert('Game não encontrado!')</script>";
+    echo "<script>location.href = '?page=meus-games'</script>";
+    exit;
+  }
+}
+
 switch ($_REQUEST["acao"]) {
   case "cadastrar":
     $nome = $_POST["nome"];
@@ -10,6 +36,8 @@ switch ($_REQUEST["acao"]) {
     $plataforma = $_POST["plataforma"];
     $imagem = $_POST["imagem"];
     $preco = $_POST["preco"];
+
+    validarUsuario("CLIENTE");
 
     $sql = "INSERT INTO games (nome, genero, plataforma, imagem, preco) VALUES ('{$nome}', '{$genero}', '{$imagem}', '{$plataforma}', {$preco})";
 
@@ -24,12 +52,23 @@ switch ($_REQUEST["acao"]) {
     }
     break;
   case "editar":
+    $id = $_REQUEST["id"];
+
+    validarId($id);
+    validarUsuario("ADMIN");
     break;
   case "excluir":
+    $id = $_REQUEST["id"];
+
+    validarId($id);
+    validarUsuario("ADMIN");
     break;
   case "alugar":
     $id = $_REQUEST["id"];
     $id_usuario = $_SESSION["id_usuario"];
+
+    validarId($id);
+    validarUsuario("CLIENTE");
 
     $sql = "SELECT * FROM aluguel_game WHERE usuario_id={$id_usuario} AND game_id={$id}";
 
@@ -66,6 +105,9 @@ switch ($_REQUEST["acao"]) {
   case "devolver":
     $id = $_REQUEST["id"];
     $id_usuario = $_SESSION["id_usuario"];
+
+    validarId($id);
+    validarUsuario("CLIENTE");
 
     $sql = "DELETE FROM aluguel_game WHERE usuario_id={$id_usuario} AND game_id={$id}";
 

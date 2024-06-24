@@ -4,9 +4,11 @@
   $resposta = $conn->query($sql);
 
   if ($resposta && $resposta->num_rows > 0) :
-    while ($linha = $resposta->fetch_object()) { 
-      $link = "location.href='?page=games-action&acao=alugar&id=" . $linha->id;
-      ?>
+    while ($linha = $resposta->fetch_object()) {
+      $linkAlugar = "location.href='?page=games-action&acao=alugar&id=" . $linha->id;
+      $linkEditar = "location.href='?page=games-action&acao=editar&id=" . $linha->id;
+      $linkExcluir = "location.href='?page=games-action&acao=excluir&id=" . $linha->id;
+  ?>
       <div class='card' style='--clr:#ff0;'>
         <img width="240px" src='<?php echo $linha->imagem; ?>' alt="<?php echo $linha->nome; ?>">
         <h3><?php echo $linha->nome; ?></h3>
@@ -14,11 +16,20 @@
         <p>Plataforma: <?php echo $linha->plataforma; ?></p>
         <p>Preço: <?php echo $linha->preco; ?></p>
         <p>Qtd. Disponível: <?php echo $linha->qtd_disponivel; ?></p>
-        <button class="botaoalugar" onclick="<?php echo $link; ?>"><strong>ALUGAR</strong></button>
+        <?php if (!empty($_SESSION) && $_SESSION["tipo_usuario"] == 'CLIENTE') : ?>
+          <button class="botaoalugar" onclick="<?php echo $linkAlugar; ?>"><strong>ALUGAR</strong></button>
+        <?php endif; ?>
+        <?php if (!empty($_SESSION) && $_SESSION["tipo_usuario"] == 'ADMIN') : ?>
+          <div class="listabotoes">
+            <!-- <button class="button">Adicionar</button> -->
+            <button class="button" onclick="<?php echo $linkEditar; ?>">Excluir</button>
+            <button class="button" onclick="<?php echo $linkExcluir; ?>">Editar</button>
+          </div>
+        <?php endif; ?>
       </div>
 
     <?php }; ?>
-  <?php else : ?> 
+  <?php else : ?>
     <p>Nenhum game encontrado!</p>
   <?php endif; ?>
 </section>
