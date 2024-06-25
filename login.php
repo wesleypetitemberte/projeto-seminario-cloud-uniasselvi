@@ -14,15 +14,18 @@
     <main>
         <div class="itens">
             <div class="container">
-                <form action="./php/actions/login-action.php" method="POST" id="formCadastro">
-                    <label for="nome">Usuário:</label>
-                    <input type="email" name="email" />
+                <section class="page-cadastro">
+                    <h1>Acesso ao sistema</h1>
+                    <form action="./php/actions/login-action.php" method="POST" id="formCadastro">
+                        <label for="nome">Usuário:</label>
+                        <input type="email" name="email" />
 
-                    <label for="nome">Senha:</label>
-                    <input type="password" name="senha" />
+                        <label for="nome">Senha:</label>
+                        <input type="password" name="senha" />
 
-                    <button>Entrar</button>
-                </form>
+                        <button>Entrar</button>
+                    </form>
+                </section>
             </div>
         </div>
         </div>
