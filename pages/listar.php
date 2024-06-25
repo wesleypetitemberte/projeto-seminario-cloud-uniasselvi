@@ -1,13 +1,14 @@
 <section class="lista">
   <?php
-  $sql = "SELECT * FROM games WHERE qtd_disponivel > 0";
-  $resposta = $conn->query($sql);
+  $sql = $conn->prepare("SELECT * FROM games WHERE qtd_disponivel > 0");
+  $sql->execute();
+  $resposta = $sql->get_result();
 
   if ($resposta && $resposta->num_rows > 0) :
     while ($linha = $resposta->fetch_object()) {
-      $linkAlugar = "location.href='?page=games-action&acao=alugar&id=" . $linha->id;
-      $linkEditar = "location.href='?page=games-action&acao=editar&id=" . $linha->id;
-      $linkExcluir = "location.href='?page=games-action&acao=excluir&id=" . $linha->id;
+      $linkAlugar = "location.href='?page=games-action&acao=alugar&id=" . $linha->id . "'";
+      $linkEditar = "location.href='?page=games-action&acao=editar&id=" . $linha->id . "'";
+      $linkExcluir = "location.href='?page=games-action&acao=excluir&id=" . $linha->id . "'";
   ?>
       <div class='card' style='--clr:#ff0;'>
         <img width="240px" src='<?php echo $linha->imagem; ?>' alt="<?php echo $linha->nome; ?>">

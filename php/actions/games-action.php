@@ -4,15 +4,17 @@
  * Página para controlar as ações do CRUD dos games
  */
 
-function validarUsuario($tipo_usuario, $id_usuario = $_SESSION["id_usuario"])
+function validarUsuario($tipo_usuario, $id_usuario = '')
 {
+  if (empty($id_usuario)) {
+    $id_usuario = $_REQUEST["id"];
+  }
+
   if (empty($_SESSION)) {
     echo "<script>alert('Você precisa estar logado para alugar um game!')</script>";
     echo "<script>location.href = '?page=login'</script>";
     exit;
   }
-
-
   if (empty($id_usuario) || $_SESSION["tipo_usuario"] != $tipo_usuario) {
     echo "<script>alert('Você não tem permissão para executar essa ação!')</script>";
     echo "<script>location.href = '?page=meus-games'</script>";
@@ -53,6 +55,8 @@ switch ($_REQUEST["acao"]) {
     break;
   case "editar":
     $id = $_REQUEST["id"];
+
+
 
     validarId($id);
     validarUsuario("ADMIN");

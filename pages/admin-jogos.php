@@ -4,9 +4,9 @@
   $resposta = $conn->query($sql);
 
   if ($resposta && $resposta->num_rows > 0) :
-    while ($linha = $resposta->fetch_object()) { 
+    while ($linha = $resposta->fetch_object()) {
       $link = "location.href='?page=games-action&acao=devolver&id=" . $linha->id;
-      ?>
+  ?>
       <div class='card' style='--clr:#0fff;'>
         <img width="240px" src='<?php echo $linha->imagem; ?>' alt="<?php echo $linha->nome; ?>">
         <h3><?php echo $linha->nome; ?></h3>
@@ -18,7 +18,8 @@
         <button class="admin-btn" onclick="<?php echo $link; ?>"><strong>excluir</strong></button>
       </div>
     <?php }; ?>
-  <?php else : ?> 
+  <?php else : ?>
+
     <p>Nenhum game encontrado!</p>
   <?php endif; ?>
 </section>
