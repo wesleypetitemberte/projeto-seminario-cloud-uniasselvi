@@ -7,7 +7,7 @@
   if ($resposta && $resposta->num_rows > 0) :
     while ($linha = $resposta->fetch_object()) {
       $linkAlugar = "location.href='?page=games-action&acao=alugar&id=" . $linha->id . "'";
-      $linkEditar = "location.href='?page=games-action&acao=editar&id=" . $linha->id . "'";
+      $linkEditar = "location.href='?page=novo&id=" . $linha->id . "'";
       $linkExcluir = "location.href='?page=games-action&acao=excluir&id=" . $linha->id . "'";
   ?>
       <div class='card' style='--clr:#ff0;'>
@@ -23,8 +23,8 @@
         <?php if (!empty($_SESSION) && $_SESSION["tipo_usuario"] == 'ADMIN') : ?>
           <div class="listabotoes">
             <!-- <button class="button">Adicionar</button> -->
-            <button class="button" onclick="<?php echo $linkEditar; ?>">Excluir</button>
-            <button class="button" onclick="<?php echo $linkExcluir; ?>">Editar</button>
+            <button class="button" onclick="<?php echo $linkEditar; ?>">Editar</button>
+            <button class="button" onclick="<?php echo $linkExcluir; ?>">Excluir</button>
           </div>
         <?php endif; ?>
       </div>
