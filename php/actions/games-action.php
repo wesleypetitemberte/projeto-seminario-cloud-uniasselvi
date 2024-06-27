@@ -10,10 +10,11 @@ switch ($_REQUEST["acao"]) {
     $plataforma = $_POST["plataforma"];
     $imagem = $_POST["imagem"];
     $preco = $_POST["preco"];
+    $qtd_disponivel = $_POST["qtd_disponivel"];
 
     validarUsuario("ADMIN");
 
-    $sql = "INSERT INTO games (nome, genero, plataforma, imagem, preco) VALUES ('{$nome}', '{$genero}', '{$imagem}', '{$plataforma}', {$preco})";
+    $sql = "INSERT INTO games (nome, genero, imagem, plataforma, preco, qtd_disponivel) VALUES ('{$nome}', '{$genero}', '{$imagem}', '{$plataforma}', {$preco}, {$qtd_disponivel})";
 
     $resposta = $conn->query($sql);
 
@@ -32,11 +33,12 @@ switch ($_REQUEST["acao"]) {
     $plataforma = $_POST["plataforma"];
     $imagem = $_POST["imagem"];
     $preco = $_POST["preco"];
+    $qtd_disponivel = $_POST["qtd_disponivel"];
 
     validarId($id);
     validarUsuario("ADMIN");
 
-    $sql = "UPDATE games SET nome='{$nome}', genero='{$genero}', plataforma='{$plataforma}', imagem='{$imagem}', preco={$preco} WHERE id={$id}";
+    $sql = "UPDATE games SET nome='{$nome}', genero='{$genero}', plataforma='{$plataforma}', imagem='{$imagem}', preco={$preco}, qtd_disponivel={$qtd_disponivel} WHERE id={$id}";
 
     $resposta = $conn->query($sql);
 

@@ -1,6 +1,6 @@
 <?php
+
 /** Arquivo de configuração do banco de dados */
-session_start();
 include("./php/config.php");
 ?>
 
@@ -24,7 +24,7 @@ include("./php/config.php");
                     <a class="botao-menu" href="./?page=novo">Cadastrar Game</a>
                 </li>
 
-            <?php elseif(!empty($_SESSION) && $_SESSION["tipo_usuario"] == 'CLIENTE') : ?>
+            <?php elseif (!empty($_SESSION) && $_SESSION["tipo_usuario"] == 'CLIENTE') : ?>
                 <li>
                     <a class="botao-menu" href="./?page=meus-games">Meus Alugueis</a>
                 </li>

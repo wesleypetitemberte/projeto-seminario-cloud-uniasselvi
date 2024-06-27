@@ -97,6 +97,9 @@ main{
 .itens{
     background-image: url(../assets/magmawall2.jpg);
     background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    background-attachment: fixed;
     box-shadow: inset 0px -90px 80px 30px rgb(8, 8, 8);
     min-height: 600px;
     border-radius: 20px;

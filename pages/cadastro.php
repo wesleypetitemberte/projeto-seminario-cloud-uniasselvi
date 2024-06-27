@@ -11,6 +11,7 @@
         public $plataforma;
         public $imagem;
         public $preco;
+        public $qtd_disponivel;
     }
 
     $game = new Game();
@@ -49,6 +50,9 @@
 
             <label for="preco">Preço</label>
             <input type="number" name="preco" placeholder="Digite o preço" value='<?php echo $game->preco ?>' />
+
+            <label for="qtd_disponivel">Quantidade</label>
+            <input type="number" name="qtd_disponivel" placeholder="Digite a quantidade" value='<?php echo $game->qtd_disponivel ?>' />
             <?php if ($page == 'Cadastrar') : ?>
                 <button type="submit">Cadastrar</button>
             <?php else : ?>
