@@ -16,15 +16,18 @@
             <div class="container">
                 <section class="page-cadastro">
                     <h1>Acesso ao sistema</h1>
+
                     <form action="./php/actions/login-action.php" method="POST" id="formCadastro">
                         <label for="nome">Usuário:</label>
-                        <input type="email" name="email" />
+                        <input type="email" name="email" placeholder="Digite seu email" required/>
 
                         <label for="nome">Senha:</label>
-                        <input type="password" name="senha" />
+                        <input type="password" name="senha" placeholder="Digite sua senha" required/>
 
                         <button>Entrar</button>
                     </form>
+
+                    <a href="./?page=novo-usuario">Não possui conta ainda? Crie sua conta aqui!</a>
                 </section>
             </div>
         </div>

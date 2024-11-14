@@ -5,13 +5,13 @@
       <input type="hidden" name="acao" value="cadastrar" />
 
       <label for="nome">Nome:</label>
-      <input type="text" name="nome" />
+      <input type="text" name="nome" placeholder="Digite seu nome" required/>
 
       <label for="email">Email:</label>
-      <input type="email" name="email" />
+      <input type="email" name="email" placeholder="Digite seu email" required/>
 
       <label for="senha">Senha:</label>
-      <input type="password" name="senha" />
+      <input type="password" name="senha" placeholder="Digite sua senha" required/>
 
       <button type="submit">Salvar</button>
     </form>

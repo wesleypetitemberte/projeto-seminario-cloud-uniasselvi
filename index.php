@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <title>Forja do Dragão - Locadora de Games</title>
+    <title>Dragon Drive - Armazenamento de dado em nuvem</title>
 </head>
 
 <body>
@@ -18,27 +18,19 @@
             <div class="container">
                 <?php
                 switch (@$_REQUEST["page"]) {
-                        /**
+                    /**
                      * Todas as páginas devem ser criadas dentro da pasta pages
                      * e deve ser feito o include aqui criando um novo case
                      */
-                    case "novo":
-                        include("./pages/cadastro.php");
-                        break;
+
                     case "novo-usuario":
                         include("./pages/cadastro-usuario.php");
                         break;
-                    case "meus-games":
-                        include("./pages/meus-games.php");
-                        break;
-                    case "games-action":
-                        include("./php/actions/games-action.php");
-                        break;
-                    case "usuario-action":
-                        include("./php/actions/usuario-action.php");
+                    case "meus-arquivos":
+                        include("./pages/meus-arquivos.php");
                         break;
                     default:
-                        include("./pages/listar.php");
+                        include("./pages/cadastro.php");
                         break;
                 }
                 ?>

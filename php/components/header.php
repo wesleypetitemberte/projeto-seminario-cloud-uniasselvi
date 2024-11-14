@@ -1,5 +1,4 @@
 <?php
-
 /** Arquivo de configuração do banco de dados */
 include("./php/config.php");
 ?>
@@ -11,25 +10,13 @@ include("./php/config.php");
         </div>
 
         <div class="nomesite">
-            <h3>Forja do Dragão Locadora de Games</h3>
+            <h3>Dragon Drive</h3>
         </div>
 
         <ul class="main-menu">
             <li>
                 <a class="botao-menu" href="./?">Home</a>
             </li>
-
-            <?php if (!empty($_SESSION) && $_SESSION["tipo_usuario"] == 'ADMIN') : ?>
-                <li>
-                    <a class="botao-menu" href="./?page=novo">Cadastrar Game</a>
-                </li>
-
-            <?php elseif (!empty($_SESSION) && $_SESSION["tipo_usuario"] == 'CLIENTE') : ?>
-                <li>
-                    <a class="botao-menu" href="./?page=meus-games">Meus Alugueis</a>
-                </li>
-            <?php endif; ?>
-
             <?php if (empty($_SESSION)) : ?>
                 <li>
                     <a class="botao-menu" href="./?page=novo-usuario">Cadastro</a>
