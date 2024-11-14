@@ -17,22 +17,13 @@
         <div class="itens">
             <div class="container">
                 <?php
-                switch (@$_REQUEST["page"]) {
-                    /**
-                     * Todas as páginas devem ser criadas dentro da pasta pages
-                     * e deve ser feito o include aqui criando um novo case
-                     */
-
-                    case "novo-usuario":
+                    if (empty($_SESSION)) {
                         include("./pages/cadastro-usuario.php");
-                        break;
-                    case "meus-arquivos":
+                    } else if (!empty($_SESSION) && $_REQUEST["page"] == "meus-arquivos") {
                         include("./pages/meus-arquivos.php");
-                        break;
-                    default:
-                        include("./pages/cadastro.php");
-                        break;
-                }
+                    } else {
+                        include("./login.php");
+                    }
                 ?>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <?php
 define("HOST", "localhost");
 define("USER", "root");
-define("PASS", "admin24");
+define("PASS", "root");
 define("DB", "dragondrive");
 
 $conn = new mysqli(HOST, USER, PASS, DB);
@@ -35,7 +35,7 @@ function validarUsuario($tipo_usuario, $id_usuario = '')
 function validarId($id)
 {
   if (empty($id)) {
-    echo "<script>alert('Game não encontrado!')</script>";
+    echo "<script>alert('arquivo não encontrado!')</script>";
     echo "<script>location.href = '?page=meus-arquivos'</script>";
     exit;
   }

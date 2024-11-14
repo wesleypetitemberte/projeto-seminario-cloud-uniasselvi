@@ -20,6 +20,8 @@ header{
 }
 
 nav{
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,13 +97,6 @@ main{
 }
 
 .itens{
-    background-image: url(../assets/magmawall2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    background-attachment: fixed;
-    box-shadow: inset 0px -90px 80px 30px rgb(8, 8, 8);
-    min-height: 600px;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -194,6 +189,7 @@ main{
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
+    width: 50%;
 }
 
 .page-cadastro h1 {
@@ -202,14 +198,13 @@ main{
     color: #ffffff;
     text-align: center;
     margin-bottom: 2rem;
-    width: 50%;
 }
 
 #formCadastro {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 #formCadastro input {
